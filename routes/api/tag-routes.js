@@ -43,6 +43,12 @@ router.delete('/:id', async (req, res) => {
     where: {
       id: req.params.id
     }  
+  })
+  .then(() => {
+    res.status(200).json({ message: 'Tag deleted successfully' });
+  })
+  .catch((err) => {
+    res.status(500).json(err);
   });
 });
 

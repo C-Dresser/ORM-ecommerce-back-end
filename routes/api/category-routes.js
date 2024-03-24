@@ -44,7 +44,10 @@ router.delete('/:id', async (req, res) => {
     where: {
       id: req.params.id,
     },
-  });
+  })
+    .then(() => {
+      res.sendStatus(200);
+    });
 });
 
 module.exports = router;
